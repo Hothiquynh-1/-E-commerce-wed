@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TechNova Store - Cửa hàng công nghệ hiện đại</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Header & Navigation -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#" class="logo">
+        <span class="logo-icon">⚡</span>
+        <span>TechNova</span>
+      </a>
+
+      <!-- Search Bar -->
+      <div class="search-box">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Tìm kiếm laptop, điện thoại, tai nghe, phụ kiện..."
+          autocomplete="off"
+        />
+        <button id="clearSearchBtn" class="clear-search-btn hidden" title="Xóa tìm kiếm">&times;</button>
+      </div>
+
+      <!-- Cart Trigger -->
+      <button id="openCartBtn" class="cart-trigger" aria-label="Mở giỏ hàng">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="9" cy="21" r="1"></circle>
+          <circle cx="20" cy="21" r="1"></circle>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+        <span class="cart-label">Giỏ hàng</span>
+        <span id="cartBadge" class="cart-badge">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <span class="badge-promo">Bộ sưu tập Công nghệ 2026</span>
+        <h1>Nâng tầm trải nghiệm làm việc &amp; giải trí</h1>
+        <p>Khám phá các thiết bị công nghệ chính hãng với mức giá ưu đãi, giao hàng nhanh toàn quốc.</p>
+        <a href="#productsSection" class="btn btn-primary">Khám phá ngay</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main id="productsSection" class="container main-layout">
+    <!-- Sidebar Filters -->
+    <aside class="filters-sidebar">
+      <div class="filter-header">
+        <h2>Bộ lọc sản phẩm</h2>
+        <button id="resetFiltersBtn" class="btn-link">Đặt lại</button>
+      </div>
+
+      <!-- Category Filter -->
+      <div class="filter-group">
+        <h3>Danh mục</h3>
+        <div id="categoryFilters" class="filter-options">
+          <label class="radio-label">
+            <input type="radio" name="category" value="all" checked />
+            <span>Tất cả sản phẩm</span>
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="category" value="laptop" />
+            <span>Laptop</span>
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="category" value="phone" />
+            <span>Điện thoại</span>
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="category" value="audio" />
+            <span>Âm thanh</span>
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="category" value="accessory" />
+            <span>Phụ kiện</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Price Range Filter -->
+      <div class="filter-group">
+        <h3>Khoảng giá</h3>
+        <div class="filter-options">
+          <label class="radio-label">
+            <input type="radio" name="price" value="all" checked />
+            <span>Tất cả mức giá</span>
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="price" value="under-2m" />
+            <span>Dưới 2.000.000₫</span>
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="price" value="2m-15m" />
+            <span>2.000.000₫ - 15.000.000₫</span>
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="price" value="15m-30m" />
+            <span>15.000.000₫ - 30.000.000₫</span>
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="price" value="above-30m" />
+            <span>Trên 30.000.000₫</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Rating Filter -->
+      <div class="filter-group">
+        <h3>Đánh giá tối thiểu</h3>
+        <div class="filter-options">
+          <label class="radio-label">
+            <input type="radio" name="rating" value="0" checked />
+            <span>Tất cả đánh giá</span>
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="rating" value="4.5" />
+            <span>Từ 4.5 ★ trở lên</span>
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="rating" value="4.0" />
+            <span>Từ 4.0 ★ trở lên</span>
+          </label>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Product Catalog -->
+    <section class="catalog-section">
+      <div class="catalog-toolbar">
+        <p id="productCountText" class="product-count">Đang hiển thị <strong>0</strong> sản phẩm</p>
+        <div class="sort-box">
+          <label for="sortSelect">Sắp xếp:</label>
+          <select id="sortSelect">
+            <option value="featured">Nổi bật nhất</option>
+            <option value="price-asc">Giá: Thấp đến Cao</option>
+            <option value="price-desc">Giá: Cao đến Thấp</option>
+            <option value="rating-desc">Đánh giá cao nhất</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Product Grid -->
+      <div id="productGrid" class="product-grid"></div>
+
+      <!-- Empty State -->
+      <div id="emptyState" class="empty-state hidden">
+        <div class="empty-icon">🔍</div>
+        <h3>Không tìm thấy sản phẩm phù hợp</h3>
+        <p>Thử thay đổi từ khóa tìm kiếm hoặc đặt lại bộ lọc để xem thêm sản phẩm.</p>
+        <button id="emptyResetBtn" class="btn btn-outline">Xóa tất cả bộ lọc</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Product Quick View Modal -->
+  <div id="productModal" class="modal-backdrop hidden">
+    <div class="modal-card product-modal-card">
+      <button id="closeProductModal" class="modal-close" aria-label="Đóng">&times;</button>
+      <div id="productModalBody" class="product-modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Cart Drawer (Slide-over) -->
+  <div id="cartOverlay" class="drawer-overlay hidden"></div>
+  <aside id="cartDrawer" class="cart-drawer" aria-hidden="true">
+    <div class="drawer-header">
+      <h2>Giỏ hàng của bạn (<span id="drawerCartCount">0</span>)</h2>
+      <button id="closeCartBtn" class="modal-close" aria-label="Đóng giỏ hàng">&times;</button>
+    </div>
+
+    <div id="cartItemsContainer" class="cart-items-container"></div>
+
+    <div id="cartFooter" class="drawer-footer hidden">
+      <div class="cart-summary-row">
+        <span>Tạm tính:</span>
+        <span id="cartSubtotal">0₫</span>
+      </div>
+      <div class="cart-summary-row">
+        <span>Phí vận chuyển:</span>
+        <span class="free-ship">Miễn phí</span>
+      </div>
+      <div class="cart-summary-total">
+        <span>Tổng cộng:</span>
+        <strong id="cartTotal">0₫</strong>
+      </div>
+      <div class="cart-actions">
+        <button id="clearCartBtn" class="btn btn-outline">Xóa giỏ hàng</button>
+        <button id="proceedCheckoutBtn" class="btn btn-primary">Tiến hành đặt hàng</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Checkout Modal -->
+  <div id="checkoutModal" class="modal-backdrop hidden">
+    <div class="modal-card checkout-modal-card">
+      <button id="closeCheckoutModal" class="modal-close" aria-label="Đóng">&times;</button>
+      <h2>Thông tin đặt hàng</h2>
+      <p class="modal-subtitle">Vui lòng điền đầy đủ thông tin nhận hàng bên dưới.</p>
+
+      <form id="checkoutForm" class="checkout-form">
+        <div class="form-group">
+          <label for="customerName">Họ và tên *</label>
+          <input type="text" id="customerName" required placeholder="Nguyễn Văn A" />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="customerPhone">Số điện thoại *</label>
+            <input type="tel" id="customerPhone" required placeholder="0901 234 567" />
+          </div>
+          <div class="form-group">
+            <label for="customerEmail">Email</label>
+            <input type="email" id="customerEmail" placeholder="email@example.com" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="customerAddress">Địa chỉ giao hàng *</label>
+          <textarea id="customerAddress" rows="2" required placeholder="Số nhà, tên đường, phường/xã, quận/huyện, tỉnh/thành phố"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="paymentMethod">Phương thức thanh toán</label>
+          <select id="paymentMethod">
+            <option value="COD">Thanh toán khi nhận hàng (COD)</option>
+            <option value="BANK">Chuyển khoản ngân hàng / QR</option>
+            <option value="CARD">Thẻ tín dụng / Ghi nợ</option>
+          </select>
+        </div>
+
+        <div class="checkout-order-summary">
+          <h4>Tóm tắt đơn hàng</h4>
+          <div id="checkoutItemsList" class="checkout-items-list"></div>
+          <div class="checkout-total-row">
+            <span>Tổng thanh toán:</span>
+            <strong id="checkoutTotalAmount">0₫</strong>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Xác nhận đặt hàng</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Order Success Modal -->
+  <div id="orderSuccessModal" class="modal-backdrop hidden">
+    <div class="modal-card success-modal-card">
+      <div class="success-icon">✓</div>
+      <h2>Đặt hàng thành công!</h2>
+      <p>Cảm ơn bạn đã mua sắm tại <strong>TechNova</strong>. Đơn hàng của bạn đang được xử lý.</p>
+      <div id="orderReceiptBox" class="receipt-box"></div>
+      <button id="closeSuccessModalBtn" class="btn btn-primary btn-block">Tiếp tục mua sắm</button>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 TechNova Store. Dự án E-Commerce HTML, CSS &amp; JavaScript thuần.</p>
+    </div>
+  </footer>
+
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
